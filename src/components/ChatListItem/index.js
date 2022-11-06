@@ -1,5 +1,6 @@
 import {Text,View,Image,StyleSheet} from 'react-native'
 
+// Day.js package converts into relative date and time 
 
 //chats ui(list of chats)
 //chats ui which renders users chats dynamically->which renders different data
