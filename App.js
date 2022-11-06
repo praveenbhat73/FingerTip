@@ -7,7 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 //bottombar
 //chatlistitem
 import ChatsScreen from './src/screens/ChatsScreen';
-
+import ChatScreen from './src/screens/ChatScreen';
 // const chat = {
 //   id: "1",
 //   user: {
@@ -29,7 +29,8 @@ export default function App() {
       <ChatListItem chat={chat}/>
       <ChatListItem chat={chat}/>
        */}
-       <ChatsScreen/>
+       {/* <ChatsScreen/> */}
+       <ChatScreen/>
       <StatusBar style="auto" />
     </View>
   );
