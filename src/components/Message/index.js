@@ -35,6 +35,7 @@ const styles=StyleSheet.create({
     container:{
         // backgroundColor:'white',
         // alignSelf:'flex-start',
+        
         margin:5,
         padding:10,
         borderRadius:12,

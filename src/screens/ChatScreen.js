@@ -8,6 +8,7 @@ import InputBox from "../components/InputBox";
 // its ImageBackground and remaining acts as child component and stays above it 
 // const image = { uri: "https://i.pinimg.com/736x/85/04/30/850430a750fb80c1ebaa5e740fc7cbd6.jpg" };
 const ChatScreen=()=>{
+    var Platform=""
     return (
 <>
 <KeyboardAvoidingView
