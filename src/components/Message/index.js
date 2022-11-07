@@ -37,7 +37,7 @@ const styles=StyleSheet.create({
         // alignSelf:'flex-start',
         margin:5,
         padding:10,
-        borderRadius:'12px',
+        borderRadius:12,
     
          maxwidth:'80%',
          //shdows
