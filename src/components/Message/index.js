@@ -35,12 +35,23 @@ const styles=StyleSheet.create({
     container:{
         // backgroundColor:'white',
         // alignSelf:'flex-start',
-        margin:3,
+        margin:5,
         padding:10,
         borderRadius:'12px',
     
          maxwidth:'80%',
-         position:'relative',
+         //shdows
+         shadowColor: '#000',
+         shadowOffset: {
+           width: 0,
+           height: 1,
+         },
+         shadowOpacity: 0.18,
+         shadowRadius: 1.0,
+     
+         elevation: 1,
+        
+
     
     },
    
