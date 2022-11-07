@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import { View, Text,StyleSheet,TextInput} from 'react-native'
 import { AntDesign,MaterialIcons,FontAwesome,Entypo } from "@expo/vector-icons";
 
 const InputBox = () => {
+  const [message,newmessage]=useState('');
+  const onVoice=()=>{
+    console.warn('Voice assistant is on!');
+  }
+  const onSend=()=>{
+    console.warn('Sending a new message:',message);
+    newmessage('');
+  }
+
+  //props comes outside the component and remains same
+  //state are used inside components which re-renders whenever state changes 
   return (
     <View style={styles.container}>
       {/* + icons  */}
@@ -12,7 +24,10 @@ const InputBox = () => {
         style={styles.attachment} />
       {/* input box 
        */}
-       <TextInput placeholder='Type to send..' style={styles.input}/>
+       <TextInput placeholder='Type to send..' style={styles.input}
+        value={message}
+        onChangeText={newmessage}
+       />
 
        {/* send icon  */}
        
@@ -20,8 +35,8 @@ const InputBox = () => {
 
 
        /> */}
-       <FontAwesome name="send" size={22} color="black" style={styles.button}/>
-       <MaterialIcons name="keyboard-voice" size={30} color="black" style={styles.voice} />
+       <FontAwesome name="send" size={22} color="black" style={styles.button} onPress={onSend}/>
+       <MaterialIcons name="keyboard-voice" size={30} color="black" style={styles.voice} onPress={onVoice}/>
     </View>
   )
 }
@@ -37,7 +52,7 @@ const styles=StyleSheet.create({
     },
     attachment:{
      cursor:'pointer',
-     
+
     },
     input:{
         flex:1,
