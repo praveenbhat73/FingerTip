@@ -37,12 +37,8 @@ const styles=StyleSheet.create({
         // alignSelf:'flex-start',
         margin:3,
         padding:10,
-        // borderRadius:11,
-        borderTopRightRadius: '12px',
-        borderBottomRightRadius:'12px',
-        borderBottomLeftRadius:'12px',
-
-        borderTopLeftRadius: '',
+        borderRadius:'12px',
+    
          maxwidth:'80%',
          position:'relative',
     
