@@ -3,12 +3,16 @@ import Message from "../components/Message";
 
 import messages from '../../assets/data/messages.json'
 import bg from '../../assets/images/BG.png'
-
+import InputBox from "../components/InputBox";
 // native special component to display image in background and remaining in top of it 
 // its ImageBackground and remaining acts as child component and stays above it 
 const ChatScreen=()=>{
     return (
 <>
+<KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.bg}
+  >
 <ImageBackground source={bg} style={styles.bg}>
     <FlatList
     data={messages}
@@ -16,9 +20,10 @@ const ChatScreen=()=>{
     style={styles.list}
     inverted
     />
-
+    <InputBox/>
    
 </ImageBackground>
+</KeyboardAvoidingView>
 </>
     );
 }
