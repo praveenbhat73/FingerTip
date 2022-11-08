@@ -14,11 +14,13 @@ const Message=({message})=>{
            {
             backgroundColor: isMessage() ? '#DCF8C5': 'white',
             alignSelf: isMessage() ? 'flex-end' : 'flex-start',
+            shadowColor:isMessage()? '#000' : "gray",
            } 
            ]
            }
            >
-            <Text >
+            <Text style={{fontFamily:'Roboto',fontSize:15}}
+            >
                 {
                     message.text
                 }
@@ -42,15 +44,15 @@ const styles=StyleSheet.create({
     
          maxwidth:'80%',
          //shdows
-         shadowColor: '#000',
+        //  shadowColor: ''
          shadowOffset: {
            width: 0,
            height: 1,
          },
-         shadowOpacity: 0.18,
-         shadowRadius: 1.0,
+         shadowOpacity: .18,
+         shadowRadius: 2.0,
      
-         elevation: 1,
+         elevation: 3,
         
 
     

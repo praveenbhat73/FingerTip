@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { View, Text,StyleSheet,TextInput} from 'react-native'
 import { AntDesign,MaterialIcons,FontAwesome,Entypo } from "@expo/vector-icons";
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 const InputBox = () => {
+  const state=true;
   const [message,newmessage]=useState('');
   const onVoice=()=>{
     console.warn('Voice assistant is on!');
@@ -15,7 +16,7 @@ const InputBox = () => {
   //props comes outside the component and remains same
   //state are used inside components which re-renders whenever state changes 
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={["bottom"]} style={styles.container}>
       {/* + icons  */}
 
         {/* <AntDesign name="plus" size={24} color="royalblue"/> */}
@@ -35,9 +36,17 @@ const InputBox = () => {
 
 
        /> */}
-       <FontAwesome name="send" size={22} color="black" style={styles.button} onPress={onSend}/>
+       {
+        (
+        
+          state ? <FontAwesome name="send" size={22} color="black" style={styles.button} onPress={onSend}/>
+          :
+     
        <MaterialIcons name="keyboard-voice" size={30} color="black" style={styles.voice} onPress={onVoice}/>
-    </View>
+      
+      )
+       }
+    </SafeAreaView>
   )
 }
 
@@ -68,15 +77,16 @@ const styles=StyleSheet.create({
     button:{
         backgroundColor: "lightgray",
         padding: 8,
-        borderRadius: 15,
+        borderRadius: 50,
         overflow: "hidden",
         marginRight:5,
         cursor:'pointer',
     },
     voice:{
+      marginRight:5,
       backgroundColor:'lightgray',
       padding:4,
-      borderRadius:15,
+      borderRadius:50,
       overflow:'hidden',
       cursor:'pointer',
     }

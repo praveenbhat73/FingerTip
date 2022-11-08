@@ -40,9 +40,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'whitesmoke',
     // alignItems: 'center',
-    paddingVertical:50,
+    // paddingVertical:50,
     justifyContent: 'center',
   },
 });
