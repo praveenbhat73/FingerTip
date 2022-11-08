@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import Navigator from './src/navigation';
 // import ChatListItem from './src/components/ChatListItem';
 //breakdown whole component into small parts
 //appbar
@@ -30,7 +30,8 @@ export default function App() {
       <ChatListItem chat={chat}/>
        */}
        {/* <ChatsScreen/> */}
-       <ChatScreen/>
+       {/* <ChatScreen/> */}
+       <Navigator/>
       <StatusBar style="auto" />
     </View>
   );
