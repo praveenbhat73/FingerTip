@@ -23,14 +23,15 @@ const ChatListItem=({chat})=>{
     const navigation=useNavigation();
     return(
         <>
-           <Pressable onPress={()=>navigation.navigate('chat',{id:chat.id,name:chat.user.name})} style={styles.container}>
+           <Pressable onPress={()=>navigation.navigate('chat',{id:chat.id,name:chat.user.name,image:chat.user.image})} style={styles.container}>
            <Image source={{uri: chat.user.image}} style={styles.image}/>
            {/* text is the inbuilt class in react native used to render the styling component and text .
            A React component for displaying text.
              Text supports nesting, styling, and touch handling */}
              <View style={styles.content}>
              <View style={styles.row}>
-                <Text style={styles.name} numberOfLines={1}>
+                <Text style={styles.name} numberOfLines={1}
+                >
                     {chat.user.name}
                 </Text>
                 <Text style={styles.subTitle}>
@@ -80,13 +81,15 @@ const styles=StyleSheet.create({
         fontWeight:'bold',
         fontSize:14.5,
         // color:'blue',
-        fontFamily:'sans-serif-condensed'
+        fontFamily:'Roboto',
+        fontWeight:"bold",
+        // textTransform:'uppercase'
 
     },
     subTitle:{
         color:'gray',
         fontSize:13.5,
-        fontFamily:'serif'
+        fontFamily:'Roboto'
         // fontFamily:'sans-serif'
     },
 

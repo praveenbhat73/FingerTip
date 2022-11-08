@@ -1,4 +1,4 @@
-import { View,Text,ImageBackground,StyleSheet,FlatList,KeyboardAvoidingView } from "react-native";
+import { View,Text,ImageBackground,StyleSheet,FlatList,KeyboardAvoidingView,Image } from "react-native";
 import Message from "../components/Message";
 
 import messages from '../../assets/data/messages.json'
@@ -14,23 +14,40 @@ const ChatScreen=()=>{
     const route=useRoute();
     useEffect(()=>{
 
-        navigation.setOptions({title: route.params.name});
-        // useeffect should be used to render the above updated params 
-        // because its called inside defualt function useeffect calls only once 
-    },[route.params])
-    var Platform=""
-    return (
-<>
+        navigation.setOptions({
+            headerRight:()=>( <Image source={{uri:route.params.image}}
+                style={{height:49,width:49,borderRadius:50,}}
+               />),
+            
+            title: route.params.name
+           ,
+        //    headerRight:()=>( <Image source={{uri:route.params.image}}
+        //     style={{height:60,width:60,borderRadius:50}}
+        //    />)})
+            })
+         
+                // <Image source={{uri:route.params.image}}/>
+         
+           //    navigation.setOptions({title:route.params.image})
+           // useeffect should be used to render the above updated params 
+           // because its called inside defualt function useeffect calls only once 
+        },[route.params.name])
+        var Platform=""
+        return (
+            <>
 <KeyboardAvoidingView
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    // behavior={Platform.OS === "ios" ? "padding" : "height"}
+    keyboardVerticalOffset={Platform.OS === "ios" ? 60 : 90}
     style={styles.bg}
   >
+        
 <ImageBackground  source={bg} style={styles.bg}>
     <FlatList
     data={messages}
     renderItem={({item})=> <Message message={item}/>}
     style={styles.list}
     inverted
+    
     />
     <InputBox/>
    
@@ -48,6 +65,10 @@ const styles=StyleSheet.create({
     },
     list:{
        padding:10, 
+       fontFamily:'sans-serif',
+       fontWeight:600,
+      
+
     }
 })
 
