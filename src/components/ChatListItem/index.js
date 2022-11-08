@@ -1,4 +1,4 @@
-import {Text,View,Image,StyleSheet} from 'react-native'
+import {Text,View,Image,StyleSheet,Pressable} from 'react-native'
 
 // Day.js package converts into relative date and time 
 import dayjs from 'dayjs';
@@ -17,10 +17,13 @@ dayjs.extend(relativeTime);
 //text has children-> one name and another message
 //only some message and name should be seen so use numberofLines property 
 //send the all information by props {data that is received from outside world}->to fetch dynamically
+
+import { useNavigation } from '@react-navigation/native';
 const ChatListItem=({chat})=>{
+    const navigation=useNavigation();
     return(
         <>
-           <View style={styles.container}>
+           <Pressable onPress={()=>navigation.navigate('chat',{id:chat.id,name:chat.user.name})} style={styles.container}>
            <Image source={{uri: chat.user.image}} style={styles.image}/>
            {/* text is the inbuilt class in react native used to render the styling component and text .
            A React component for displaying text.
@@ -38,7 +41,7 @@ const ChatListItem=({chat})=>{
                     {chat.lastMessage.text}
                 </Text>    
              </View>
-             </View>
+             </Pressable>
         </>
     )
 }
