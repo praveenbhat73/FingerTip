@@ -5,7 +5,7 @@ import ChatsScreen from '../screens/ChatsScreen';
 // Native Stack Navigator provides a way for your app to transition between screens where each new screen is placed on top of a stack.
 import MainTabNavigator from './MainTabNavigator';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import ContactsScreen from '../screens/ContactsScreen';
 const Stack=createNativeStackNavigator();
 const Navigator = () => {
   return (
@@ -19,6 +19,7 @@ const Navigator = () => {
         {/* <Stack.Screen name="chats" component={ChatsScreen}
         /> */}
         <Stack.Screen name="chat" component={ChatScreen}/>
+        <Stack.Screen name="Contacts" component={ContactsScreen}/>
      </Stack.Navigator>
     </NavigationContainer>
   );
